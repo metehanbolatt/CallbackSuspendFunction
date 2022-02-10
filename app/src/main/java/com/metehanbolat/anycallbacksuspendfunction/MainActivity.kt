@@ -18,14 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
-        /*
         mainViewModel.countries.observe(this) {
             println(it)
         }
-
-         */
-        println(mainViewModel.getDataFromApi())
-        println(mainViewModel.countries.value)
 
     }
 }

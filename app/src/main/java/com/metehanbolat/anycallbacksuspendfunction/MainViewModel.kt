@@ -15,8 +15,8 @@ class MainViewModel: ViewModel() {
     private val disposable = CompositeDisposable()
     val countries = MutableLiveData<List<CountryModel>>()
 
-    fun getDataFromApi(): Boolean {
-        val a = disposable.add(
+    fun getDataFromApi(){
+        disposable.add(
             countryApiService.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -32,6 +32,5 @@ class MainViewModel: ViewModel() {
 
                 })
         )
-        return a
     }
 }
